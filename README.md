@@ -1,43 +1,108 @@
-# NexT
+![Hugo](https://raw.githubusercontent.com/spf13/hugo/master/docs/static/img/hugo-logo.png)
 
-> 精于心，简于形
+A Fast and Flexible Static Site Generator built with love by [spf13](http://spf13.com/) and [friends](https://github.com/spf13/hugo/graphs/contributors) in [Go][].
 
-<a href="http://notes.iissnan.com" target="_blank">在线预览 Preview</a> | <a href="http://theme-next.iissnan.com" target="_blank">NexT 使用文档</a> |  [English Documentation](README.en.md)
+[Website](https://gohugo.io) |
+[Forum](https://discuss.gohugo.io) |
+[Developer Chat (no support)](https://gitter.im/spf13/hugo) |
+[Documentation](https://gohugo.io/overview/introduction/) |
+[Installation Guide](https://gohugo.io/overview/installing/) |
+[Contribution Guide](CONTRIBUTING.md) |
+[Twitter](http://twitter.com/spf13)
 
-[![Join the chat at https://gitter.im/iissnan/hexo-theme-next](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/iissnan/hexo-theme-next?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![GoDoc](https://godoc.org/github.com/spf13/hugo?status.svg)](https://godoc.org/github.com/spf13/hugo)
+[![Linux and OS X Build Status](https://api.travis-ci.org/spf13/hugo.svg?branch=master&label=Linux+and+OS+X+build "Linux and OS X Build Status")](https://travis-ci.org/spf13/hugo)
+[![Windows Build Status](https://ci.appveyor.com/api/projects/status/n2mo912b8s2505e8/branch/master?svg=true&label=Windows+build "Windows Build Status")](https://ci.appveyor.com/project/spf13/hugo/branch/master)
+[![Dev chat at https://gitter.im/spf13/hugo](https://img.shields.io/badge/gitter-developer_chat-46bc99.svg)](https://gitter.im/spf13/hugo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Go Report Card](https://goreportcard.com/badge/github.com/spf13/hugo)](https://goreportcard.com/report/github.com/spf13/hugo)
 
-![NexT Schemes](http://iissnan.com/nexus/next/next-schemes.jpg)
+## Overview
 
+Hugo is a static HTML and CSS website generator written in [Go][].
+It is optimized for speed, easy use and configurability.
+Hugo takes a directory with content and templates and renders them into a full HTML website.
 
-## 浏览器支持 Browser support
+Hugo relies on Markdown files with front matter for meta data.
+And you can run Hugo from any directory.
+This works well for shared hosts and other systems where you don’t have a privileged account.
 
-![Browser support](http://iissnan.com/nexus/next/browser-support.png)
+Hugo renders a typical website of moderate size in a fraction of a second.
+A good rule of thumb is that each piece of content renders in around 1 millisecond.
 
+Hugo is designed to work well for any kind of website including blogs, tumbles and docs.
 
-## 贡献 Contributing
+#### Supported Architectures
 
-接受各种形式的贡献，包括不限于提交问题与需求，修复代码。等待您的`Pull Request`。
+Currently, we provide pre-built Hugo binaries for Windows, Linux, FreeBSD, NetBSD and OS&nbsp;X (Darwin) for x64, i386 and ARM architectures.
 
-Any types of contribution are welcome. Thanks.
+Hugo may also be compiled from source wherever the Go compiler tool chain can run, e.g. for other operating systems including DragonFly BSD, OpenBSD, Plan&nbsp;9 and Solaris.
 
-## 开发 Development
+**Complete documentation is available at [Hugo Documentation][].**
 
-NexT 主旨在于简洁优雅且易于使用，所以首先要尽量确保 NexT 的简洁易用性。
+## Choose How to Install
 
-NexT is built for easily use with elegant appearance. First things first, always keep things simple.
+If you want to use Hugo as your site generator, simply install the Hugo binaries.
+The Hugo binaries have no external dependencies.
 
-## [开发历史 Changelog](https://github.com/iissnan/hexo-theme-next/wiki/Changelog)
+To contribute to the Hugo source code or documentation, you should [fork the Hugo GitHub project](https://github.com/spf13/hugo#fork-destination-box) and clone it to your local machine.
 
-[![hexo-image]][hexo-url]
-[![bower-image]][bower-url]
-[![jquery-image]][jquery-url]
-[![velocity-image]][velocity-url]
+Finally, you can install the Hugo source code with `go`, build the binaries yourself, and run Hugo that way.
+Building the binaries is an easy task for an experienced `go` getter.
 
-[hexo-image]: http://img.shields.io/badge/Hexo-2.4+-2BAF2B.svg?style=flat-square
-[hexo-url]: http://hexo.io
-[bower-image]: http://img.shields.io/badge/Bower-*-2BAF2B.svg?style=flat-square
-[bower-url]: http://bower.io
-[jquery-image]: https://img.shields.io/badge/jquery-2.1-2BAF2B.svg?style=flat-square
-[jquery-url]: http://jquery.com/
-[velocity-image]: https://img.shields.io/badge/Velocity-1.2-2BAF2B.svg?style=flat-square
-[velocity-url]: http://julian.com/research/velocity/
+### Install Hugo as Your Site Generator (Binary Install)
+
+Use the [installation instructions in the Hugo documentation](https://gohugo.io/overview/installing/).
+
+### Build and Install the Binaries from Source (Advanced Install)
+
+Add Hugo and its package dependencies to your go `src` directory.
+
+    go get -v github.com/spf13/hugo
+
+Once the `get` completes, you should find your new `hugo` (or `hugo.exe`) executable sitting inside `$GOPATH/bin/`.
+
+To update Hugo’s dependencies, use `go get` with the `-u` option.
+
+    go get -u -v github.com/spf13/hugo
+
+## Contributing to Hugo
+
+For a complete guide to contributing to Hugo, see the [Contribution Guide](CONTRIBUTING.md).
+
+We welcome contributions to Hugo of any kind including documentation, themes,
+organization, tutorials, blog posts, bug reports, issues, feature requests,
+feature implementations, pull requests, answering questions on the forum,
+helping to manage issues, etc.
+
+The Hugo community and maintainers are very active and helpful, and the project benefits greatly from this activity.
+
+[![Throughput Graph](https://graphs.waffle.io/spf13/hugo/throughput.svg)](https://waffle.io/spf13/hugo/metrics)
+
+### Asking Support Questions
+
+We have an active [discussion forum](http://discuss.gohugo.io) where users and developers can ask questions.
+Please don't use the Github issue tracker to ask questions.
+
+### Reporting Issues
+
+If you believe you have found a defect in Hugo or its documentation, use
+the Github issue tracker to report the problem to the Hugo maintainers.
+If you're not sure if it's a bug or not, start by asking in the [discussion forum](http://discuss.gohugo.io).
+When reporting the issue, please provide the version of Hugo in use (`hugo version`).
+
+### Submitting Patches
+
+The Hugo project welcomes all contributors and contributions regardless of skill or experience level.
+If you are interested in helping with the project, we will help you with your contribution.
+Hugo is a very active project with many contributions happening daily.
+Because we want to create the best possible product for our users and the best contribution experience for our developers,
+we have a set of guidelines which ensure that all contributions are acceptable.
+The guidelines are not intended as a filter or barrier to participation.
+If you are unfamiliar with the contribution process, the Hugo team will help you and teach you how to bring your contribution in accordance with the guidelines.
+
+For a complete guide to contributing code to Hugo, see the [Contribution Guide](CONTRIBUTING.md).
+
+[![Analytics](https://ga-beacon.appspot.com/UA-7131036-6/hugo/readme)](https://github.com/igrigorik/ga-beacon)
+
+[Go]: https://golang.org/
+[Hugo Documentation]: https://gohugo.io/overview/introduction/
