@@ -1,15 +1,17 @@
+hugo
+docs/public*
+/.idea
+hugo.exe
+*.test
+*.prof
+nohup.out
+cover.out
+*.swp
+*.swo
 .DS_Store
-.idea/
-*.log
-*.iml
-node_modules/
+*~
+vendor/*/
+*.bench
+coverage*.out
 
-# Ignore unused verdors' files
-source/lib/fancybox/*
-!source/lib/fancybox/source/
-
-source/lib/font-awesome/less/
-source/lib/font-awesome/scss/
-
-source/lib/ua-parser-js/*
-!source/lib/ua-parser-js/dist/
+GoBuilds
