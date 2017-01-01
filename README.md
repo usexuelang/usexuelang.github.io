@@ -1,108 +1,215 @@
-![Hugo](https://raw.githubusercontent.com/spf13/hugo/master/docs/static/img/hugo-logo.png)
+# Blackburn
 
-A Fast and Flexible Static Site Generator built with love by [spf13](http://spf13.com/) and [friends](https://github.com/spf13/hugo/graphs/contributors) in [Go][].
-
-[Website](https://gohugo.io) |
-[Forum](https://discuss.gohugo.io) |
-[Developer Chat (no support)](https://gitter.im/spf13/hugo) |
-[Documentation](https://gohugo.io/overview/introduction/) |
-[Installation Guide](https://gohugo.io/overview/installing/) |
-[Contribution Guide](CONTRIBUTING.md) |
-[Twitter](http://twitter.com/spf13)
-
-[![GoDoc](https://godoc.org/github.com/spf13/hugo?status.svg)](https://godoc.org/github.com/spf13/hugo)
-[![Linux and OS X Build Status](https://api.travis-ci.org/spf13/hugo.svg?branch=master&label=Linux+and+OS+X+build "Linux and OS X Build Status")](https://travis-ci.org/spf13/hugo)
-[![Windows Build Status](https://ci.appveyor.com/api/projects/status/n2mo912b8s2505e8/branch/master?svg=true&label=Windows+build "Windows Build Status")](https://ci.appveyor.com/project/spf13/hugo/branch/master)
-[![Dev chat at https://gitter.im/spf13/hugo](https://img.shields.io/badge/gitter-developer_chat-46bc99.svg)](https://gitter.im/spf13/hugo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Go Report Card](https://goreportcard.com/badge/github.com/spf13/hugo)](https://goreportcard.com/report/github.com/spf13/hugo)
+Blackburn is a clear and responsive theme for [Hugo](//gohugo.io).
 
 ## Overview
 
-Hugo is a static HTML and CSS website generator written in [Go][].
-It is optimized for speed, easy use and configurability.
-Hugo takes a directory with content and templates and renders them into a full HTML website.
+* Based on Yahoo's [Pure CSS] (http://purecss.io/) (v0.6.0)
+* Fixed sidebar with social links:
+  * Twitter
+  * GNU social
+  * Facebook
+  * Google+
+  * Weibo
+  * Tumblr
+  * Instagram
+  * Flickr
+  * Pinterest
+  * YouTube
+  * Vimeo
+  * Vine
+  * SlideShare
+  * LinkedIn
+  * Xing
+  * Reddit
+  * Hacker News
+  * GitHub
+  * Bitbucket
+  * Stack Overflow
+  * Server Fault
+  * Steam
+  * MobyGames
+  * Last.fm
+  * Discogs
+  * Keybase
+* Client-side syntax highlighting by [Highlight.js](//highlightjs.org) (v9.1.0)
+* Web analytics by Google Analytics
+* Comments by Disqus
+* Icons by Font Awesome (v4.5.0)
 
-Hugo relies on Markdown files with front matter for meta data.
-And you can run Hugo from any directory.
-This works well for shared hosts and other systems where you don’t have a privileged account.
+## Demo
 
-Hugo renders a typical website of moderate size in a fraction of a second.
-A good rule of thumb is that each piece of content renders in around 1 millisecond.
+* [Demo](http://themes.gohugo.io/theme/blackburn/)
+* You can also see it in action on my personal website [here](http://yoshiharuyamashita.com/)
 
-Hugo is designed to work well for any kind of website including blogs, tumbles and docs.
+## Screenshots
 
-#### Supported Architectures
+![screenshot](https://raw.githubusercontent.com/yoshiharuyamashita/blackburn/master/images/screenshot.png)
 
-Currently, we provide pre-built Hugo binaries for Windows, Linux, FreeBSD, NetBSD and OS&nbsp;X (Darwin) for x64, i386 and ARM architectures.
+## Installation
 
-Hugo may also be compiled from source wherever the Go compiler tool chain can run, e.g. for other operating systems including DragonFly BSD, OpenBSD, Plan&nbsp;9 and Solaris.
+In your Hugo site directory, run:
 
-**Complete documentation is available at [Hugo Documentation][].**
+```shell
+$ mkdir themes
+$ cd themes
+$ git clone https://github.com/yoshiharuyamashita/blackburn.git
+```
 
-## Choose How to Install
+or download from [here](//github.com/yoshiharuyamashita/blackburn/archive/master.zip).
 
-If you want to use Hugo as your site generator, simply install the Hugo binaries.
-The Hugo binaries have no external dependencies.
+See [Hugo Quickstart Guide](//gohugo.io/overview/quickstart/) for more information.
 
-To contribute to the Hugo source code or documentation, you should [fork the Hugo GitHub project](https://github.com/spf13/hugo#fork-destination-box) and clone it to your local machine.
+## Configuration
 
-Finally, you can install the Hugo source code with `go`, build the binaries yourself, and run Hugo that way.
-Building the binaries is an easy task for an experienced `go` getter.
+Example config.toml:
 
-### Install Hugo as Your Site Generator (Binary Install)
+```toml
+baseurl = "https://www.example.com/"
+title = "Your site title"
+author = "Your name"
+# Shown in the side menu
+copyright = "&copy; 2016. All rights reserved."
+canonifyurls = true
+paginate = 10
 
-Use the [installation instructions in the Hugo documentation](https://gohugo.io/overview/installing/).
+[indexes]
+  tag = "tags"
+  topic = "topics"
 
-### Build and Install the Binaries from Source (Advanced Install)
+[params]
+  # Shown in the home page
+  subtitle = "A Hugo Theme"
+  brand = "Blackburn"
+  googleAnalytics = "Your Google Analytics tracking ID"
+  disqus = "Your Disqus shortname"
+  # CSS name for highlight.js
+  highlightjs = "androidstudio"
+  dateFormat = "02 Jan 2006, 15:04"
+  # Include any custom CSS and/or JS files
+  # (relative to /static folder)
+  custom_css = ["css/my.css"]
+  custom_js = ["js/my.js"]
 
-Add Hugo and its package dependencies to your go `src` directory.
+[menu]
+  # Shown in the side menu.
+  [[menu.main]]
+    name = "Home"
+    pre = "<i class='fa fa-home fa-fw'></i>"
+    weight = 0
+    identifier = "home"
+    url = "/"
+  [[menu.main]]
+    name = "Posts"
+    pre = "<i class='fa fa-list fa-fw'></i>"
+    weight = 1
+    identifier = "post"
+    url = "/post/"
+  [[menu.main]]
+    name = "About"
+    pre = "<i class='fa fa-user fa-fw'></i>"
+    weight = 2
+    identifier = "about"
+    url = "/about/"
+  [[menu.main]]
+    name = "Contact"
+    pre = "<i class='fa fa-phone fa-fw'></i>"
+    weight = 3
+    url = "/contact/"
 
-    go get -v github.com/spf13/hugo
+[social]
+  # Link your social networking accounts to the side menu
+  # by entering your username or ID.
 
-Once the `get` completes, you should find your new `hugo` (or `hugo.exe`) executable sitting inside `$GOPATH/bin/`.
+  # SNS microblogging
+  twitter = "*"
+  gnusocial = "*" # Specify href (e.g. https://quitter.se/yourusername)
+  facebook = "*"
+  googleplus = "*"
+  weibo = "*"
+  tumblr = "*"
 
-To update Hugo’s dependencies, use `go get` with the `-u` option.
+  # SNS photo/video sharing
+  instagram = "*"
+  flickr = "*"
+  pinterest = "*"
+  youtube = "*"
+  vimeo = "*"
+  vine = "*"
+  slideshare = "*"
 
-    go get -u -v github.com/spf13/hugo
+  # SNS career oriented
+  linkedin = "*"
+  xing = "*"
 
-## Contributing to Hugo
+  # SNS news
+  reddit = "*"
+  hackernews = "*"
 
-For a complete guide to contributing to Hugo, see the [Contribution Guide](CONTRIBUTING.md).
+  # Techie
+  github = "yoshiharuyamashita"
+  bitbucket = "*"
+  stackoverflow = "*"
+  serverfault = "*"
 
-We welcome contributions to Hugo of any kind including documentation, themes,
-organization, tutorials, blog posts, bug reports, issues, feature requests,
-feature implementations, pull requests, answering questions on the forum,
-helping to manage issues, etc.
+  # Gaming
+  steam = "*"
+  mobygames = "*"
 
-The Hugo community and maintainers are very active and helpful, and the project benefits greatly from this activity.
+  # Music
+  lastfm = "*"
+  discogs = "*"
 
-[![Throughput Graph](https://graphs.waffle.io/spf13/hugo/throughput.svg)](https://waffle.io/spf13/hugo/metrics)
+  # Other
+  keybase = "*"
+```
 
-### Asking Support Questions
+## Usage
 
-We have an active [discussion forum](http://discuss.gohugo.io) where users and developers can ask questions.
-Please don't use the Github issue tracker to ask questions.
+* Write Markdown files in `content/post`
+* Add fixed pages (e.g., about.md) to the side menu by defining them under `[menu]` in the config.toml:
 
-### Reporting Issues
+```toml
+[[menu.main]]
+  name = "About"
+  pre = "<i class='fa fa-user fa-fw'></i>"
+  weight = 2
+  identifier = "about"
+  url = "/about/"
+```
 
-If you believe you have found a defect in Hugo or its documentation, use
-the Github issue tracker to report the problem to the Hugo maintainers.
-If you're not sure if it's a bug or not, start by asking in the [discussion forum](http://discuss.gohugo.io).
-When reporting the issue, please provide the version of Hugo in use (`hugo version`).
+* Override the theme by linking to custom CSS files:
 
-### Submitting Patches
+```toml
+[params]
+  custom_css = ["css/my.css"]
+```
 
-The Hugo project welcomes all contributors and contributions regardless of skill or experience level.
-If you are interested in helping with the project, we will help you with your contribution.
-Hugo is a very active project with many contributions happening daily.
-Because we want to create the best possible product for our users and the best contribution experience for our developers,
-we have a set of guidelines which ensure that all contributions are acceptable.
-The guidelines are not intended as a filter or barrier to participation.
-If you are unfamiliar with the contribution process, the Hugo team will help you and teach you how to bring your contribution in accordance with the guidelines.
+* Add new behaviours by linking to custom JS files:
 
-For a complete guide to contributing code to Hugo, see the [Contribution Guide](CONTRIBUTING.md).
+```toml
+[params]
+  custom_js = ["js/my.js"]
+```
 
-[![Analytics](https://ga-beacon.appspot.com/UA-7131036-6/hugo/readme)](https://github.com/igrigorik/ga-beacon)
+## Shortcodes
 
-[Go]: https://golang.org/
-[Hugo Documentation]: https://gohugo.io/overview/introduction/
+### Positional
+
+```
+{{% fluid_img "/path/to/img" %}}
+```
+
+### Named
+
+```
+{{% fluid_img class="pure-u-1-2" src="/path/to/img" alt="img description" %}}
+{{% fluid_img class="pure-u-1-3" src="/path/to/img" caption="img description" %}}
+```
+
+* `class`, `alt` and `caption` are optional.
+* See [Pure CSS Grids](http://purecss.io/grids/) for possible `class` values.
+
+## License
+
+* [MIT](//opensource.org/licenses/MIT)
